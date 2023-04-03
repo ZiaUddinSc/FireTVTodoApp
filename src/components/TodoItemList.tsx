@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import {styles} from './TodoStyles';
 import CheckBox from '@react-native-community/checkbox';
-import {Text, View, FlatList, TouchableOpacity} from 'react-native';
+import {Text, View, FlatList, Button} from 'react-native';
+import  {selectable} from './Selectable/'
+
+const SelectableButton = selectable(Button);
 
 
 function TodoItemList(props) {
@@ -22,11 +25,12 @@ function TodoItemList(props) {
             <Text style={styles.text}>{item ? item.name : ''}</Text>
           </View>
           <View style={styles.deleteContainer}>
-            <TouchableOpacity
-              style={styles.removeTodo}
-              onPress={() => props.removeTodo(item)}>
-              <Text style={styles.deleteIcon}> X </Text>
-            </TouchableOpacity>
+            
+          <SelectableButton
+            style={styles.removeTodo}
+            title="X"
+            onPress={() => props.removeTodo(item)}
+            />
           </View>
         </View>
       )}

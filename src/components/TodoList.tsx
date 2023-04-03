@@ -1,23 +1,10 @@
 import React, {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {
-  AddTodo,
-  RemoveTodo,
-  UpdateTodo,
-  RemoveAllTodo,
-} from '../redux/actions/todoActions';
 import {styles} from './TodoStyles';
 import LinearGradient from 'react-native-linear-gradient';
 import CustomButton from './CustomButton';
 import {
   Text,
   View,
-  TextInput,
-  Button,
-  FlatList,
-  TouchableOpacity,
-  Dimensions,
-  ScrollView,
   useColorScheme,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
