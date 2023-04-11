@@ -14,6 +14,8 @@ export default class SelectableInput extends Component {
     this._input.focus();
   }
 
+
+
   handleSubmit = () => {
     this._input.blur();
   }
@@ -21,10 +23,12 @@ export default class SelectableInput extends Component {
   render() {
     return (
       <Selectable
-        onPress={this._handleInputPress}
-        onSubmitEditing={this.handleSubmit}
+        onPress={this.handleSubmit}
+        onSubmitEditing={this._handleInputPress}
         ref={i => (this._input = i ? i._wrappedComponent : null)}
         {...this.props}
+        autoFocus={this.props.autoFocus ? this.props.autoFocus : false}
+        returnKeyType={'next'}
       />
     );
   }

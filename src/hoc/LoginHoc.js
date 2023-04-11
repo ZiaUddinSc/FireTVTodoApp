@@ -12,6 +12,7 @@ const LoginHoc = LoginComponent => {
     const [secureText, setSecureText] = useState(true);
     const [loading, setLoading] = useState(false);
 
+
     const onFooterLinkPress = () => {
       navigation.navigate('Registration');
     };
